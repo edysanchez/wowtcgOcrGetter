@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<project name="wowtcgOcrGetter" basedir="." default="compile">
+    <property name="lib.dir" value="lib" />
+    <property name="build.dir" value="bin" />
+    <property name="src.dir" value="src" />
+    
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+    <target name="clean">
+        <delete dir="${src.bin}"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="classpath"/>
+    </target>
+</project>
